@@ -242,7 +242,7 @@
 		
 		/* Improved footer */
 		#alja {
-			
+			border:solid;
 			height: auto;
 			display: flex;
 			flex-direction: column;
@@ -450,7 +450,10 @@
 			#kerdesKattFelirat{
 				font-size: 0.75rem;
 			}
-			
+			.faq-question:hover {
+				background: rgba(255,255,255,0.12);
+				transform: translateX(0px);
+			}
 			.faq-answer {
 				font-size: 0.8rem;
 			}
@@ -586,6 +589,7 @@
 			setupElerhetosegLink();
 			setupBovebbenLink();
 			torzs.classList.remove('expanded');
+			torzs.classList.add('compact');
 			document.getElementById('alja').style.display = 'flex';
 		  };
 
@@ -689,7 +693,7 @@
 			var wrap = document.getElementById('kontakt-form-wrap');
 			wrap.style.display = 'none';
 			document.getElementById('alja').style.display = 'none';
-
+			torzs.classList.remove('compact');
 			var kozvetlen = document.getElementById('kozvetlen');
 			kozvetlen.style.cursor = 'pointer';
 			kozvetlen.addEventListener('click', function () {
@@ -697,7 +701,7 @@
 			  wrap.style.display = isHidden ? 'block' : 'none';
 			  torzs.classList.toggle('expanded', isHidden);
 			});
-
+			torzs.classList.add('compact');
 			initKontaktForm();
 			updateViewportSize();
 		  };
@@ -808,7 +812,7 @@
 			</div>
 			<div id="tel_alja" class="contact-item">
 				📱 Telefon:
-				<br><a href="tel:+36301234567">06 30 1234569</a>
+				<br><a href="tel:+36301234567">06 30 1234562</a>
 			</div>
 		</div>
 	</div>
