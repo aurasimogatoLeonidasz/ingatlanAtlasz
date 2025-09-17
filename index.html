@@ -413,19 +413,6 @@
 				height: 60vh;
 			}
 			
-			
-			#torzs.compact {
-				height: auto;
-				padding-top: 80px; /* space for absolutely positioned buttons */
-			  }
-			  
-			  #torzs.compact .content-area {
-				position: static;
-				height: auto;
-				margin: 0 20px 20px 20px; /* no top margin since we have padding-top */
-			  }
-			}
-			
 			#bttn_celunk_torzs, #bttn_bovebben_torzs, #bttn_kapcsolat_torzs {
 				min-width: 40px;
 				font-size: 0.85rem;
@@ -462,6 +449,27 @@
 				font-size: 0.8rem;
 			}
 			
+			#torzs.compact {
+				height: auto;
+				display: flex;
+				flex-direction: column;
+				padding-top: 20px;
+			  }
+			  
+			  #torzs.compact .button-container {
+				position: static;
+				align-self: flex-start;
+				margin-bottom: 20px;
+			  }
+			  
+			  #torzs.compact .content-area {
+				position: static;
+				height: auto;
+				flex: 1;
+				margin: 0 20px 20px 20px;
+			  }
+			  
+			  
 			#alja {
 				height: auto;
 				padding: 4px;
@@ -705,7 +713,7 @@
 			  wrap.style.display = isHidden ? 'block' : 'none';
 			  torzs.classList.toggle('expanded', isHidden);
 			});
-			torzs.classList.add('compact');
+
 			initKontaktForm();
 			updateViewportSize();
 		  };
@@ -816,10 +824,9 @@
 			</div>
 			<div id="tel_alja" class="contact-item">
 				📱 Telefon:
-				<br><a href="tel:+36301234567">06 30 1234565</a>
+				<br><a href="tel:+36301234567">06 30 1234563</a>
 			</div>
 		</div>
 	</div>
 </body>
 </html>
-
