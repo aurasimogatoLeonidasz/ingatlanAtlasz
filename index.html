@@ -90,6 +90,11 @@
 			bottom: 40px; 
 		}
 		
+		.content-area.auto-height {
+		  height: auto;
+		  bottom: auto;
+		  max-height: calc(100vh - 140px); /* prevent overflow */
+		}
 		/* Button container */
 		.button-container {
 			
@@ -572,6 +577,7 @@
 			setupBovebbenLink();
 			torzs.classList.remove('expanded');
 			document.getElementById('alja').style.display = 'flex';
+			document.querySelector('.content-area').classList.add('auto-height');
 		  };
 
 		  bttn_bovebben_torzs.onclick = function () {
@@ -648,6 +654,7 @@
 			  </div>
 			`;
 			torzs.classList.remove('expanded');
+			document.querySelector('.content-area').classList.remove('auto-height');
 			document.getElementById('alja').style.display = 'flex';
 			setupFAQ();
 		  };
@@ -682,7 +689,7 @@
 			  wrap.style.display = isHidden ? 'block' : 'none';
 			  torzs.classList.toggle('expanded', isHidden);
 			});
-
+			document.querySelector('.content-area').classList.add('auto-height');
 			initKontaktForm();
 			updateViewportSize();
 		  };
