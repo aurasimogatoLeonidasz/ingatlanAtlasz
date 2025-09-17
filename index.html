@@ -70,6 +70,7 @@
 		}
 		
 		#torzs {
+		border:solid;
 			height: 60vh;
 			position: relative;
 			font-size: 2rem;
@@ -83,15 +84,16 @@
 		}
 		
 		#torzs.expanded {
-			height: 80vh; /* make it taller when Kapcsolat is open */
+			height: 80vh; 
 		}
 
 		#torzs.expanded .content-area {
-			bottom: 40px; /* give more room inside */
+			bottom: 40px; 
 		}
 		
 		/* Button container */
 		.button-container {
+			
 			position: absolute;
 			top: 20px;
 			left: 20px;
@@ -405,7 +407,7 @@
 		
 		@media (max-width: 480px) {
 			#teto {
-				font-size: 0.5rem;
+				font-size: 2.5rem;
 			}
 			
 			#bttn_celunk_torzs, #bttn_bovebben_torzs, #bttn_kapcsolat_torzs {
@@ -420,6 +422,7 @@
 			  
 			.content-area {
 				top: 70px;
+				bottom: 1px;
 			}
 			
 			.content-text {
@@ -454,6 +457,7 @@
 
 			.content-area {
 				top: 85px;
+				
 			}
 			
 			.content-text {
@@ -776,10 +780,9 @@
 			</div>
 			<div id="tel_alja" class="contact-item">
 				📱 Telefon:
-				<br><a href="tel:+36301234567">06 30 1234562</a>
+				<br><a href="tel:+36301234567">06 30 1234567</a>
 			</div>
 		</div>
 	</div>
 </body>
 </html>
-
