@@ -412,16 +412,20 @@
 			#torzs{
 				height: 60vh;
 			}
+			
+			
 			#torzs.compact {
 				height: auto;
-				min-height: 40vh; /* ensure minimum space */
+				padding-top: 80px; /* space for absolutely positioned buttons */
 			  }
 			  
 			  #torzs.compact .content-area {
-				
+				position: static;
 				height: auto;
-				
+				margin: 0 20px 20px 20px; /* no top margin since we have padding-top */
 			  }
+			}
+			
 			#bttn_celunk_torzs, #bttn_bovebben_torzs, #bttn_kapcsolat_torzs {
 				min-width: 40px;
 				font-size: 0.85rem;
@@ -812,7 +816,7 @@
 			</div>
 			<div id="tel_alja" class="contact-item">
 				📱 Telefon:
-				<br><a href="tel:+36301234567">06 30 1234563</a>
+				<br><a href="tel:+36301234567">06 30 1234567</a>
 			</div>
 		</div>
 	</div>
