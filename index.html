@@ -241,24 +241,19 @@
 		
 		/* Improved footer */
 		#alja {
-			height: 20vh;
+			
+			height: auto;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			justify-content: center;
+			justify-content: flex-start;
 			gap: 12px;
 			text-align: center;
-			padding: 10px;
+			/*padding: 10px; felesleges*/
 			font-size: 1.2rem;
 		}
 
-		.footer-title {
-			font-size: 1rem;
-			letter-spacing: 0.5px;
-			text-transform: uppercase;
-			color: #eaeaea;
-			opacity: 0.9;
-		}
+		
 
 		.footer-card {
 			display: flex;
@@ -348,9 +343,7 @@
 				font-size: 1.1rem;
 			}
 			
-			.footer-title{
-				font-size: 0.9rem;
-			}
+			
 			
 		}
 		
@@ -406,15 +399,13 @@
 				font-size: 1rem;
 			}
 			
-			.footer-title{
-				font-size: 0.8rem;
-			}
+			
 			
 		}
 		
 		@media (max-width: 480px) {
 			#teto {
-				font-size: 2.5rem;
+				font-size: 1.5rem;
 			}
 			
 			#bttn_celunk_torzs, #bttn_bovebben_torzs, #bttn_kapcsolat_torzs {
@@ -438,12 +429,10 @@
 			#alja {
 				height: auto;
 				padding: 4px;
-				font-size: 0.9rem;
-			}
-			
-			.footer-title{
 				font-size: 0.7rem;
 			}
+			
+			
 		}
 		
 		@media (max-height: 858px) {
@@ -497,9 +486,7 @@
 				font-size: 1.1rem;
 			}
 			
-			.footer-title{
-				font-size: 0.9rem;
-			}
+			
 		}
 		@media (max-height: 645px) {
 			#teto {
@@ -553,9 +540,7 @@
 				font-size: 1rem;
 			}
 			
-			.footer-title{
-				font-size: 0.8rem;
-			}
+			
 		}
 		@media (max-height: 350px) {
 			#teto {
@@ -588,9 +573,7 @@
 					font-size: 0.9rem;
 				}
 				
-				.footer-title{
-					font-size: 0.7rem;
-				}
+				
 		}
 	
 		
@@ -670,39 +653,67 @@
 				<p id="modoFunkcFelirat" style="margin-bottom: 25px; color: #e0e0e0;">Az alábbi funkciók mindegyike igény szerint módosítható, illetve eltávolítható!</p>
 
 				<div class="faq-item">
-				  <div class="faq-question">Szeretne átfogó képet kapni a kiadásairól és bevételeiről?</div>
-				  <div class="faq-answer"><p>A nyilvántartó rendszerben lehetősége nyílik táblázatos és diagrammos kimutatások készítésére a közüzemi és javítási költségekről, illetve az ingatlan esetleges kiadásából származó bevételekről.</p></div>
-				</div>
-
-				<div class="faq-item">
-				  <div class="faq-question">Kiutat keres az adatok káoszából?</div>
-				  <div class="faq-answer"><p>Az Ingatlan Atlasz strukkturáltsága révén biztos megoldást nyújt a nyilvántartott adatok egyszerű és hatékony átlátására…</p></div>
-				</div>
-
-				<div class="faq-item">
-				  <div class="faq-question">Aggódik az adatok biztonságáért?</div>
-				  <div class="faq-answer"><p>A rendszerbe való belépéshez felhasználói profil szükséges…</p></div>
-				</div>
-
-				<div class="faq-item">
-				  <div class="faq-question">Van e lehetőség meghatározott paraméterekkel rendelkező ingatlanok keresésére?</div>
-				  <div class="faq-answer"><p>Természetesen van…</p></div>
-				</div>
-
-				<div class="faq-item">
-				  <div class="faq-question">Elakadás esetén van e mód segítségkérésre?</div>
-				  <div class="faq-answer"><p>Igen, a nyilvántartó rendszer beépített súgó gombokkal rendelkezik…</p></div>
-				</div>
-
-				<div class="faq-item">
-				  <div class="faq-question">Változtatható a betűk mérete/színe?</div>
-				  <div class="faq-answer"><p>Az Ingatlan Atlaszban lehetőséget biztosít…</p></div>
-				</div>
-
-				<div class="faq-item">
-				  <div class="faq-question">Miért nem rendelkezem az Ingatlan Atlasz nyilvántartó rendszerrel?</div>
-				  <div class="faq-answer"><p>… <a href="#" class="elerhetosegek_link">Kapcsolat</a> …</p></div>
-				</div>
+							<div class="faq-question">Szeretne átfogó képet kapni a kiadásairól és bevételeiről?</div>
+							<div class="faq-answer">
+								<p>A nyilvántartó rendszerben lehetősége nyílik táblázatos és diagrammos kimutatások készítésére a közüzemi és javítási költségekről, illetve az ingatlan esetleges kiadásából származó bevételekről.</p>
+							</div>
+						</div>
+						
+						<div class="faq-item">
+							<div class="faq-question">Kiutat keres az adatok káoszából?</div>
+							<div class="faq-answer">
+								<p>Az Ingatlan Atlasz strukkturáltsága révén biztos megoldást nyújt a nyilvántartott adatok egyszerű és hatékony átlátására. A rendszer felépítése lehetővé teszi, hogy az adatok szeparáltan jelenjenek meg, így egyszerre mindig csak egymással szorosan összefüggő információk legyenek láthatóak.</p>
+							</div>
+						</div>
+						
+						<div class="faq-item">
+							<div class="faq-question">Aggódik az adatok biztonságáért?</div>
+							<div class="faq-answer">
+								<p>A rendszerbe való belépéshez felhasználói profil (név és jelszó) szükséges. Ezen felül minden profilnak saját jogosultsági szint adható, illetve az az egyes funkciók használata (például egy ingatlan teljeskörű törlése) is jogosultsági szinthez köthető.</p>
+							</div>
+						</div>
+						
+						<div class="faq-item">
+							<div class="faq-question">Van e lehetőség meghatározott paraméterekkel rendelkező ingatlanok keresésére?</div>
+							<div class="faq-answer">
+								<p>Természetesen van. Az ilyenfajta lekérdezések készítésekor egy listát kapunk a megfelelő ingatlanok neveivel. Minden találat mellett pedig egy gomb helyezkedik el, amelyre kattintva megtekinthetjük a kiválasztott ingatlan összes adatát.  </p>
+							</div>
+						</div>
+						
+						<div class="faq-item">
+							<div class="faq-question">Milyen módon védekezik a rendszer a helytelen adatok megadása ellen?</div>
+							<div class="faq-answer">
+								<p>Mentést megelőzően a számlaadatokat összeveti a rendszer a eddgiekkel, illetve az adott számlához tartozó részadatokat egymással és jelentős eltérés esetén pedig jelzi azt felhasználóknak. Ezen felül számos adatot a rendszer előre meghatározott formátumban vár, a beírást követően pedig azonnal ellenőrzi is őket (ilyenek például a telefonszám vagy a dátum mezők).</p>
+							</div>
+						</div>
+						
+						<div class="faq-item">
+							<div class="faq-question">Egyszerre több felhasználó is tudja használni?</div>
+							<div class="faq-answer">
+								<p>A rendszerben tárolt adatokhoz egyidjűleg több felhasználó is hozzáférhet, azonban egy adott ingatlan adatait egyszerre kizárólag egy felhasználó szerkesztheti.</p>
+							</div>
+						</div>
+						
+						<div class="faq-item">
+							<div class="faq-question">Elakadás esetén van e mód segítségkérésre?</div>
+							<div class="faq-answer">
+								<p>Igen, a nyilvántartó rendszer beépített súgó gombokkal rendelkezik, amelyekre kattintva a felhasználó rövid leírást kaphat az éppen elérhető funkciók használatáról. Ugyan ez a hatás érhető el a F1 billentyű lenyomásával. </p>
+							</div>
+						</div>
+						
+						<div class="faq-item">
+							<div class="faq-question">Változtatható a betűk mérete/színe?</div>
+							<div class="faq-answer">
+								<p>Az Ingatlan Atlaszban lehetőséget biztosít hogy minden felhasználó a saját igényei szerint használja az alkalmazást. Az alapértelmezett betűmerettől 2 egységgel lehet növelni illetve csökkenteni a betűk méretét. Színek tekintetében pedig kék, zöld és letisztult (fekete-fehér) stílusok közül lehet választani.</p>
+							</div>
+						</div>
+						
+						<div class="faq-item">
+							<div class="faq-question">Miért nem rendelkezem az Ingatlan Atlasz nyilvántartó rendszerrel?</div>
+							<div class="faq-answer">
+								<p>Ennek az egyedüli oka az lehet, hogy még nem keresett fel bennünket a <a href="#" class="elerhetosegek_link">Kapcsolat</a> menüpontban található elérhetőségek egyikén!</p>
+							</div>
+						</div>
 			  </div>
 			`;
 			torzs.classList.remove('expanded');
@@ -716,10 +727,9 @@
 			  '0 0 30px deepskyblue inset, 0 0 30px deepskyblue inset, 0 0 10px deepskyblue inset, 0 0 10px deepskyblue inset, 0 0 10px deepskyblue inset';
 
 			contentText.innerHTML =
-			  "📧 <strong>E-mail:</strong><br><span class='sorBehuzas'>új ügyfelek részére:</span> <a href='mailto:ingatlanatlasz@gmail.com'>ingatlanatlasz@gmail.com</a><br><span class='sorBehuzas'>meglévő ügyfelek részére: <a href='mailto:ingatlanatlaszmeglevo@gmail.com'>ingatlanatlaszmeglevo@gmail.com</a></span><br><br>📱 <strong>Telefon:</strong> <a href='tel:+36301234567'>+36 30 123 4568</a><br><br>🔗<span id='kozvetlen'><strong>Nem fér hozzá az e-mail címéhez?</strong></span><br><br>" +
+			  "📧 <strong>E-mail:</strong><br><span class='sorBehuzas'>új ügyfelek részére:</span> <a href='mailto:ingatlanatlasz@gmail.com'>ingatlanatlasz@gmail.com</a><br><span class='sorBehuzas'>meglévő ügyfelek részére: <a href='mailto:ingatlanatlaszmeglevo@gmail.com'>ingatlanatlaszmeglevo@gmail.com</a></span><br><br>📱 <strong>Telefon:</strong> <a href='tel:+36301234567'>+36 30 123 4567</a><br><br>🔗 <span id='kozvetlen'><strong>Közvetlen üzenet küldéséhez kattintson ide</strong></span><br><br>" +
 			  "<div id='kontakt-form-wrap' style='margin-top:12px; margin-left:32px;'>" +
 			  "<form id='kontaktForm' class='kapcsolat-form' style='display:grid;gap:10px;max-width:520px;'>" +
-			  "<span class='sorBehuzas' style='text-align:center;'>Írjon közvetlen üzenet:</span>" +
 			  "<input type='hidden' name='access_key' value='d0602500-3ece-48c6-86db-bef88bbcda5d'>" +
 			  "<input type='hidden' name='subject' value='Kapcsolat üzenet az oldalról'>" +
 			  "<input type='checkbox' name='botcheck' style='display:none'>" +
@@ -844,4 +854,3 @@
 	</div>
 </body>
 </html>
-
