@@ -437,24 +437,19 @@
 				margin-left:30px;
 			}
 			
+			/* Keep button positioning consistent - remove compact layout changes */
 			#torzs.compact {
-				height: auto;
-				display: flex;
-				flex-direction: column;
-				padding-top: 20px;
+				/* Remove layout changes that affect button positioning */
 			}
 			  
+			/* Ensure buttons always stay in the same position */
 			#torzs.compact .button-container {
-				position: static;
-				align-self: flex-start;
-				margin-bottom: 20px;
+				/* Keep original positioning */
 			}
 			  
+			/* Keep content-area positioning consistent */
 			#torzs.compact .content-area {
-				position: static;
-				height: auto;
-				flex: 1;
-				margin: 0 20px 20px 20px;
+				/* Keep original positioning */
 			}
 			
 			.content-area.lil{
@@ -530,9 +525,9 @@
 			  "<br>Célunk egy olyan megbízható szoftverkomponens elérhetővé tétele, amely hatékony megoldás nyújt vállalkozásoknak, illetve magánszemélyeknek az ingatlanok nyilvántartásában.<br><br>Ha szeretne jobban megismerkedni a nyilvántartó rendszerben rejlő funkciókkal, kérem kattintson a <a href='#' class='bovebben_link'>Bővebben</a> menüpontra.<br><br>Amennyiben szüksége van az említett szoftverre/applikációra vagy meglévő ügyfelükként továbbfejlesztési igénye lenne kérem, keressen bizalommal a <a href='#' class='elerhetosegek_link'>Kapcsolat</a> menüpontban található elérhetőségek egyikén.";
 			setupElerhetosegLink();
 			setupBovebbenLink();
-			torzs.classList.remove('expanded');
-			contentArea.classList.add('lil');
-			torzs.classList.add('compact');
+			// Reset all layout classes to ensure consistent positioning
+			torzs.classList.remove('expanded', 'compact');
+			contentArea.classList.remove('lil');
 			document.getElementById('alja').style.display = 'flex';
 		  };
 
@@ -658,8 +653,9 @@
 			var wrap = document.getElementById('kontakt-form-wrap');
 			wrap.style.display = 'none';
 			document.getElementById('alja').style.display = 'none';
+			// Reset all layout classes to ensure consistent positioning
+			torzs.classList.remove('expanded', 'compact');
 			contentArea.classList.remove('lil');
-			torzs.classList.add('compact');
 			
 			var kozvetlen = document.getElementById('kozvetlen');
 			kozvetlen.style.cursor = 'pointer';
@@ -779,7 +775,7 @@
 			</div>
 			<div id="tel_alja" class="contact-item">
 				📱 Telefon:
-				<br><a href="tel:+36301234567">06 30 1234568</a>
+				<br><a href="tel:+36301234567">06 30 1234567</a>
 			</div>
 		</div>
 	</div>
