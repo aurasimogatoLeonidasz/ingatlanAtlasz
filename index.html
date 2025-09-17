@@ -584,7 +584,6 @@
 			setupElerhetosegLink();
 			setupBovebbenLink();
 			torzs.classList.remove('expanded');
-			torzs.classList.add('compact');
 			document.getElementById('alja').style.display = 'flex';
 		  };
 
@@ -662,7 +661,6 @@
 			  </div>
 			`;
 			torzs.classList.remove('expanded');
-			torzs.classList.remove('compact');
 			document.getElementById('alja').style.display = 'flex';
 			setupFAQ();
 		  };
@@ -689,8 +687,7 @@
 			var wrap = document.getElementById('kontakt-form-wrap');
 			wrap.style.display = 'none';
 			document.getElementById('alja').style.display = 'none';
-			torzs.classList.add('compact');
-			
+
 			var kozvetlen = document.getElementById('kozvetlen');
 			kozvetlen.style.cursor = 'pointer';
 			kozvetlen.addEventListener('click', function () {
