@@ -406,7 +406,6 @@
 			}
 			  
 			.content-area {
-				text-align:justify;
 				top: 70px;
 				bottom: 1px;
 			}
@@ -453,7 +452,11 @@
 				flex: 1;
 				margin: 0 20px 20px 20px;
 			}
-			  
+			
+			.content-area.lil{
+				text-align:justify;
+			}
+			
 			#alja {
 				height: auto;
 				padding: 4px;
@@ -466,6 +469,7 @@
 		  var bttn_celunk_torzs = document.getElementById('bttn_celunk_torzs');
 		  var bttn_bovebben_torzs = document.getElementById('bttn_bovebben_torzs');
 		  var bttn_kapcsolat_torzs = document.getElementById('bttn_kapcsolat_torzs');
+		  var contentArea = document.querySelector('.content-area');
 		  var contentText = document.getElementById('content-text');
 		  var torzs = document.getElementById('torzs');
 
@@ -523,6 +527,7 @@
 			setupElerhetosegLink();
 			setupBovebbenLink();
 			torzs.classList.remove('expanded');
+			contentArea.classList.add('lil');
 			torzs.classList.add('compact');
 			document.getElementById('alja').style.display = 'flex';
 		  };
@@ -602,6 +607,7 @@
 			`;
 			torzs.classList.remove('expanded');
 			torzs.classList.remove('compact');
+			contentArea.classList.remove('lil');
 			document.getElementById('alja').style.display = 'flex';
 			setupFAQ();
 		  };
@@ -614,7 +620,7 @@
 			contentText.innerHTML = `
 			  <div style="margin-bottom: 20px;">
 				<div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-				  <span style="min-width: 50px; flex-shrink: 0;">📧 <strong>E-mail:</strong></span>
+				  <span style="min-width: 20px; flex-shrink: 0;">📧 <strong>E-mail:</strong></span>
 				  
 				  <div style="flex: 1;">
 					<div style="margin-bottom: 8px;"><br>új ügyfelek részére: <a href='mailto:ingatlanatlasz@gmail.com'>ingatlanatlasz@gmail.com</a></div>
@@ -623,7 +629,7 @@
 				</div>
 				
 				<div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-				  <span style="min-width: 50px; flex-shrink: 0;">📱 <strong>Telefon:</strong></span>
+				  <span style="min-width: 20px; flex-shrink: 0;">📱 <strong>Telefon:</strong></span>
 				  <div><a href='tel:+36301234567'>+36 30 123 4567</a></div>
 				</div>
 			  </div>
@@ -648,8 +654,9 @@
 			var wrap = document.getElementById('kontakt-form-wrap');
 			wrap.style.display = 'none';
 			document.getElementById('alja').style.display = 'none';
+			contentArea.classList.remove('lil');
 			torzs.classList.add('compact');
-
+			
 			var kozvetlen = document.getElementById('kozvetlen');
 			kozvetlen.style.cursor = 'pointer';
 			kozvetlen.addEventListener('click', function () {
@@ -768,7 +775,7 @@
 			</div>
 			<div id="tel_alja" class="contact-item">
 				📱 Telefon:
-				<br><a href="tel:+36301234567">06 30 1234562</a>
+				<br><a href="tel:+36301234567">06 30 1234567</a>
 			</div>
 		</div>
 	</div>
