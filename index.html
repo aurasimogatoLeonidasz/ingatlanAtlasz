@@ -75,7 +75,6 @@
 			font-size: 2rem;
 			transition: all 0.3s ease;
 			text-align: left;
-	
 		}
 		
 		.sorBehuzas {
@@ -92,7 +91,6 @@
 		
 		/* Button container */
 		.button-container {
-			
 			position: absolute;
 			top: 20px;
 			left: 20px;
@@ -173,8 +171,7 @@
 		}
 		
 		.faq-question {
-		
-			padding: 15px 25px 15px 20px;
+			padding: 15px 45px 15px 20px;
 			cursor: pointer;
 			background: rgba(255,255,255,0.08);
 			transition: all 0.3s ease;
@@ -240,10 +237,8 @@
 			text-decoration:underline;
 		}
 		
-		
 		/* Improved footer */
 		#alja {
-			
 			height: auto;
 			display: flex;
 			flex-direction: column;
@@ -251,11 +246,8 @@
 			justify-content: flex-start;
 			gap: 12px;
 			text-align: center;
-			/*padding: 10px; felesleges*/
 			font-size: 1.2rem;
 		}
-
-		
 
 		.footer-card {
 			display: flex;
@@ -306,7 +298,6 @@
 				font-size: 1rem;
 				padding: 11.5px 19.5px;
 			}
-			
 
 			.content-area {
 				top: 85px;
@@ -317,7 +308,7 @@
 			}
 			
 			.faq-question {
-				padding: 12px 15px;
+				padding: 12px 40px 12px 15px;
 				font-size: 0.95rem;
 			}
 			#modoFunkcFelirat{
@@ -335,18 +326,12 @@
 			.faq-answer.active {
 				padding: 12px 15px;
 			}
-			
-			
-			
-			
+
 			#alja {
 				height: auto;
 				padding: 8px;
 				font-size: 1.1rem;
 			}
-			
-			
-			
 		}
 		
 		@media (max-width: 800px) {
@@ -364,7 +349,6 @@
 				font-size: 0.9rem;
 				padding: 9.5px 17.5px;
 			}
-			
 
 			.content-area {
 				top:75px;
@@ -375,7 +359,7 @@
 			}
 			
 			.faq-question {
-				padding: 12px 15px;
+				padding: 12px 40px 12px 15px;
 				font-size: 0.85rem;
 			}
 			
@@ -400,9 +384,6 @@
 				padding: 6px;
 				font-size: 1rem;
 			}
-			
-			
-			
 		}
 		
 		@media (max-width: 480px) {
@@ -420,9 +401,7 @@
 				padding: 9.5px 17.5px;
 			}
 			.button-container {
-				left: 50%;                    
-				//transform: translateX(-50%);
-				left: 25px;  
+				left: 5px;  
 				gap: 5px;  
 			}
 			  
@@ -435,17 +414,16 @@
 				font-size: 0.7rem;
 			}
 			
-			.faq-question {
-				padding: 12px 40px 12px 15px; 
-				font-size: 0.75rem;
-			  }
-			  
 			#modoFunkcFelirat{
 				font-size: 0.7rem;
 			}
 			
 			#kerdesKattFelirat{
 				font-size: 0.75rem;
+			}
+			.faq-question {
+				padding: 12px 40px 12px 15px;
+				font-size: 0.7rem;
 			}
 			.faq-question:hover {
 				background: rgba(255,255,255,0.12);
@@ -455,82 +433,32 @@
 				font-size: 0.8rem;
 			}
 			
-
-
-			  
-			  # .content-area {
+			#torzs.compact {
 				height: auto;
-			  }
+				display: flex;
+				flex-direction: column;
+				padding-top: 20px;
+			}
 			  
+			#torzs.compact .button-container {
+				position: static;
+				align-self: flex-start;
+				margin-bottom: 20px;
+			}
+			  
+			#torzs.compact .content-area {
+				position: static;
+				height: auto;
+				flex: 1;
+				margin: 0 20px 20px 20px;
+			}
 			  
 			#alja {
 				height: auto;
 				padding: 4px;
 				font-size: 0.7rem;
 			}
-			
-			
 		}
-		/*
-		@media (max-height: 858px) {
-			#teto {
-				font-size: 4rem;
-			}
-			
-			
-			
-			.button-container {
-				flex-direction: row;
-				gap: 10px;
-			}
-			
-			#bttn_celunk_torzs, #bttn_bovebben_torzs, #bttn_kapcsolat_torzs {
-				min-width: 120px;
-				font-size: 1rem;
-				padding: 11.5px 19.5px;
-			}
-			
-
-			.content-area {
-				top: 85px;
-				
-			}
-			
-			.content-text {
-				font-size: 1.1rem;
-			}
-			
-			.faq-question {
-				padding: 12px 15px;
-				font-size: 0.95rem;
-			}
-			#modoFunkcFelirat{
-				font-size: 0.95rem;
-			}
-			
-			#kerdesKattFelirat{
-				font-size: 0.85rem;
-			}
-			
-			.faq-answer {
-				font-size: 1rem;
-			}
-			
-			.faq-answer.active {
-				padding: 12px 15px;
-			}
-			
-			#alja {
-				height: auto;
-				padding: 8px;
-				font-size: 1.1rem;
-			}
-			
-			
-		}
-		*/
-	
-		
 	</style>
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
@@ -608,70 +536,71 @@
 				<p id="modoFunkcFelirat" style="margin-bottom: 25px; color: #e0e0e0;">Az alábbi funkciók mindegyike igény szerint módosítható, illetve eltávolítható!</p>
 
 				<div class="faq-item">
-							<div class="faq-question">Szeretne átfogó képet kapni a kiadásairól és bevételeiről?</div>
-							<div class="faq-answer">
-								<p>A nyilvántartó rendszerben lehetősége nyílik táblázatos és diagrammos kimutatások készítésére a közüzemi és javítási költségekről, illetve az ingatlan esetleges kiadásából származó bevételekről.</p>
-							</div>
-						</div>
-						
-						<div class="faq-item">
-							<div class="faq-question">Kiutat keres az adatok káoszából?</div>
-							<div class="faq-answer">
-								<p>Az Ingatlan Atlasz strukkturáltsága révén biztos megoldást nyújt a nyilvántartott adatok egyszerű és hatékony átlátására. A rendszer felépítése lehetővé teszi, hogy az adatok szeparáltan jelenjenek meg, így egyszerre mindig csak egymással szorosan összefüggő információk legyenek láthatóak.</p>
-							</div>
-						</div>
-						
-						<div class="faq-item">
-							<div class="faq-question">Aggódik az adatok biztonságáért?</div>
-							<div class="faq-answer">
-								<p>A rendszerbe való belépéshez felhasználói profil (név és jelszó) szükséges. Ezen felül minden profilnak saját jogosultsági szint adható, illetve az az egyes funkciók használata (például egy ingatlan teljeskörű törlése) is jogosultsági szinthez köthető.</p>
-							</div>
-						</div>
-						
-						<div class="faq-item">
-							<div class="faq-question">Van e lehetőség meghatározott paraméterekkel rendelkező ingatlanok keresésére?</div>
-							<div class="faq-answer">
-								<p>Természetesen van. Az ilyenfajta lekérdezések készítésekor egy listát kapunk a megfelelő ingatlanok neveivel. Minden találat mellett pedig egy gomb helyezkedik el, amelyre kattintva megtekinthetjük a kiválasztott ingatlan összes adatát.  </p>
-							</div>
-						</div>
-						
-						<div class="faq-item">
-							<div class="faq-question">Milyen módon védekezik a rendszer a helytelen adatok megadása ellen?</div>
-							<div class="faq-answer">
-								<p>Mentést megelőzően a számlaadatokat összeveti a rendszer a eddgiekkel, illetve az adott számlához tartozó részadatokat egymással és jelentős eltérés esetén pedig jelzi azt felhasználóknak. Ezen felül számos adatot a rendszer előre meghatározott formátumban vár, a beírást követően pedig azonnal ellenőrzi is őket (ilyenek például a telefonszám vagy a dátum mezők).</p>
-							</div>
-						</div>
-						
-						<div class="faq-item">
-							<div class="faq-question">Egyszerre több felhasználó is tudja használni?</div>
-							<div class="faq-answer">
-								<p>A rendszerben tárolt adatokhoz egyidjűleg több felhasználó is hozzáférhet, azonban egy adott ingatlan adatait egyszerre kizárólag egy felhasználó szerkesztheti.</p>
-							</div>
-						</div>
-						
-						<div class="faq-item">
-							<div class="faq-question">Elakadás esetén van e mód segítségkérésre?</div>
-							<div class="faq-answer">
-								<p>Igen, a nyilvántartó rendszer beépített súgó gombokkal rendelkezik, amelyekre kattintva a felhasználó rövid leírást kaphat az éppen elérhető funkciók használatáról. Ugyan ez a hatás érhető el a F1 billentyű lenyomásával. </p>
-							</div>
-						</div>
-						
-						<div class="faq-item">
-							<div class="faq-question">Változtatható a betűk mérete/színe?</div>
-							<div class="faq-answer">
-								<p>Az Ingatlan Atlaszban lehetőséget biztosít hogy minden felhasználó a saját igényei szerint használja az alkalmazást. Az alapértelmezett betűmerettől 2 egységgel lehet növelni illetve csökkenteni a betűk méretét. Színek tekintetében pedig kék, zöld és letisztult (fekete-fehér) stílusok közül lehet választani.</p>
-							</div>
-						</div>
-						
-						<div class="faq-item">
-							<div class="faq-question">Miért nem rendelkezem az Ingatlan Atlasz nyilvántartó rendszerrel?</div>
-							<div class="faq-answer">
-								<p>Ennek az egyedüli oka az lehet, hogy még nem keresett fel bennünket a <a href="#" class="elerhetosegek_link">Kapcsolat</a> menüpontban található elérhetőségek egyikén!</p>
-							</div>
-						</div>
+					<div class="faq-question">Szeretne átfogó képet kapni a kiadásairól és bevételeiről?</div>
+					<div class="faq-answer">
+						<p>A nyilvántartó rendszerben lehetősége nyílik táblázatos és diagrammos kimutatások készítésére a közüzemi és javítási költségekről, illetve az ingatlan esetleges kiadásából származó bevételekről.</p>
+					</div>
+				</div>
+				
+				<div class="faq-item">
+					<div class="faq-question">Kiutat keres az adatok káoszából?</div>
+					<div class="faq-answer">
+						<p>Az Ingatlan Atlasz strukkturáltsága révén biztos megoldást nyújt a nyilvántartott adatok egyszerű és hatékony átlátására. A rendszer felépítése lehetővé teszi, hogy az adatok szeparáltan jelenjenek meg, így egyszerre mindig csak egymással szorosan összefüggő információk legyenek láthatóak.</p>
+					</div>
+				</div>
+				
+				<div class="faq-item">
+					<div class="faq-question">Aggódik az adatok biztonságáért?</div>
+					<div class="faq-answer">
+						<p>A rendszerbe való belépéshez felhasználói profil (név és jelszó) szükséges. Ezen felül minden profilnak saját jogosultsági szint adható, illetve az az egyes funkciók használata (például egy ingatlan teljeskörű törlése) is jogosultsági szinthez köthető.</p>
+					</div>
+				</div>
+				
+				<div class="faq-item">
+					<div class="faq-question">Van e lehetőség meghatározott paraméterekkel rendelkező ingatlanok keresésére?</div>
+					<div class="faq-answer">
+						<p>Természetesen van. Az ilyenfajta lekérdezések készítésekor egy listát kapunk a megfelelő ingatlanok neveivel. Minden találat mellett pedig egy gomb helyezkedik el, amelyre kattintva megtekinthetjük a kiválasztott ingatlan összes adatát.</p>
+					</div>
+				</div>
+				
+				<div class="faq-item">
+					<div class="faq-question">Milyen módon védekezik a rendszer a helytelen adatok megadása ellen?</div>
+					<div class="faq-answer">
+						<p>Mentést megelőzően a számlaadatokat összeveti a rendszer a eddgiekkel, illetve az adott számlához tartozó részadatokat egymással és jelentős eltérés esetén pedig jelzi azt felhasználóknak. Ezen felül számos adatot a rendszer előre meghatározott formátumban vár, a beírást követően pedig azonnal ellenőrzi is őket (ilyenek például a telefonszám vagy a dátum mezők).</p>
+					</div>
+				</div>
+				
+				<div class="faq-item">
+					<div class="faq-question">Egyszerre több felhasználó is tudja használni?</div>
+					<div class="faq-answer">
+						<p>A rendszerben tárolt adatokhoz egyidjűleg több felhasználó is hozzáférhet, azonban egy adott ingatlan adatait egyszerre kizárólag egy felhasználó szerkesztheti.</p>
+					</div>
+				</div>
+				
+				<div class="faq-item">
+					<div class="faq-question">Elakadás esetén van e mód segítségkérésre?</div>
+					<div class="faq-answer">
+						<p>Igen, a nyilvántartó rendszer beépített súgó gombokkal rendelkezik, amelyekre kattintva a felhasználó rövid leírást kaphat az éppen elérhető funkciók használatáról. Ugyan ez a hatás érhető el a F1 billentyű lenyomásával.</p>
+					</div>
+				</div>
+				
+				<div class="faq-item">
+					<div class="faq-question">Változtatható a betűk mérete/színe?</div>
+					<div class="faq-answer">
+						<p>Az Ingatlan Atlaszban lehetőséget biztosít hogy minden felhasználó a saját igényei szerint használja az alkalmazást. Az alapértelmezett betűmerettől 2 egységgel lehet növelni illetve csökkenteni a betűk méretét. Színek tekintetében pedig kék, zöld és letisztult (fekete-fehér) stílusok közül lehet választani.</p>
+					</div>
+				</div>
+				
+				<div class="faq-item">
+					<div class="faq-question">Miért nem rendelkezem az Ingatlan Atlasz nyilvántartó rendszerrel?</div>
+					<div class="faq-answer">
+						<p>Ennek az egyedüli oka az lehet, hogy még nem keresett fel bennünket a <a href="#" class="elerhetosegek_link">Kapcsolat</a> menüpontban található elérhetőségek egyikén!</p>
+					</div>
+				</div>
 			  </div>
 			`;
 			torzs.classList.remove('expanded');
+			torzs.classList.remove('compact');
 			document.getElementById('alja').style.display = 'flex';
 			setupFAQ();
 		  };
@@ -681,24 +610,44 @@
 			bttn_kapcsolat_torzs.style.boxShadow =
 			  '0 0 30px deepskyblue inset, 0 0 30px deepskyblue inset, 0 0 10px deepskyblue inset, 0 0 10px deepskyblue inset, 0 0 10px deepskyblue inset';
 
-			contentText.innerHTML =
-			  "📧 <strong>E-mail:</strong><br><span class='sorBehuzas'>új ügyfelek részére:</span> <a href='mailto:ingatlanatlasz@gmail.com'>ingatlanatlasz@gmail.com</a><br><span class='sorBehuzas'>meglévő ügyfelek részére: <a href='mailto:ingatlanatlaszmeglevo@gmail.com'>ingatlanatlaszmeglevo@gmail.com</a></span><br><br>📱 <strong>Telefon:</strong> <a href='tel:+36301234567'>+36 30 123 4567</a><br><br> <span id='viewportSize' style='display:inline-block;margin-top:6px;'></span><br><br>🔗 <span id='kozvetlen'><strong>Közvetlen üzenet küldéséhez kattintson ide</strong></span><br><br>" +
-			  "<div id='kontakt-form-wrap' style='margin-top:12px; margin-left:32px;'>" +
-			  "<form id='kontaktForm' class='kapcsolat-form' style='display:grid;gap:10px;max-width:520px;'>" +
-			  "<input type='hidden' name='access_key' value='d0602500-3ece-48c6-86db-bef88bbcda5d'>" +
-			  "<input type='hidden' name='subject' value='Kapcsolat üzenet az oldalról'>" +
-			  "<input type='checkbox' name='botcheck' style='display:none'>" +
-			  "<label>Név<input name='name' type='text' required placeholder='Az Ön neve' style='width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.08);color:#fff'></label>" +
-			  "<label>Telefonszám<input id='tel' name='tel' type='tel' inputmode='tel' autocomplete='tel' required placeholder='06 30 123 4567' style='width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.08);color:#fff'></label>" +
-			  "<label>Üzenet<textarea name='message' required rows='5' placeholder='Kérem, ide írja üzenetét…' style='width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.08);color:#fff'></textarea></label>" +
-			  "<button id='kontaktKuldes' type='submit' style='padding:12px 18px;border-radius:10px;border:2px solid #fff;background:transparent;color:#fff;font-weight:600;cursor:pointer'>Üzenet küldése</button>" +
-			  "<div id='kontaktUzenet' style='min-height:20px;font-size:0.95rem'></div>" +
-			  "</form></div>";
+			contentText.innerHTML = `
+			  <div style="margin-bottom: 20px;">
+				<div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+				  <span style="min-width: 70px; flex-shrink: 0;">📧 <strong>E-mail:</strong></span>
+				  <div style="flex: 1;">
+					<div style="margin-bottom: 8px;">új ügyfelek részére: <a href='mailto:ingatlanatlasz@gmail.com'>ingatlanatlasz@gmail.com</a></div>
+					<div>meglévő ügyfelek részére: <a href='mailto:ingatlanatlaszmeglevo@gmail.com'>ingatlanatlaszmeglevo@gmail.com</a></div>
+				  </div>
+				</div>
+				
+				<div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+				  <span style="min-width: 70px; flex-shrink: 0;">📱 <strong>Telefon:</strong></span>
+				  <div><a href='tel:+36301234567'>+36 30 123 4567</a></div>
+				</div>
+			  </div>
+			  
+			  <span id='viewportSize' style='display:inline-block;margin-top:6px;'></span><br><br>
+			  🔗 <span id='kozvetlen'><strong>Közvetlen üzenet küldéséhez kattintson ide</strong></span><br><br>
+			  
+			  <div id='kontakt-form-wrap' style='margin-top:12px;'>
+				<form id='kontaktForm' class='kapcsolat-form' style='display:grid;gap:10px;max-width:520px;'>
+				  <input type='hidden' name='access_key' value='d0602500-3ece-48c6-86db-bef88bbcda5d'>
+				  <input type='hidden' name='subject' value='Kapcsolat üzenet az oldalról'>
+				  <input type='checkbox' name='botcheck' style='display:none'>
+				  <label>Név<input name='name' type='text' required placeholder='Az Ön neve' style='width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.08);color:#fff'></label>
+				  <label>Telefonszám<input id='tel' name='tel' type='tel' inputmode='tel' autocomplete='tel' required placeholder='06 30 123 4567' style='width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.08);color:#fff'></label>
+				  <label>Üzenet<textarea name='message' required rows='5' placeholder='Kérem, ide írja üzenetét…' style='width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.08);color:#fff'></textarea></label>
+				  <button id='kontaktKuldes' type='submit' style='padding:12px 18px;border-radius:10px;border:2px solid #fff;background:transparent;color:#fff;font-weight:600;cursor:pointer'>Üzenet küldése</button>
+				  <div id='kontaktUzenet' style='min-height:20px;font-size:0.95rem'></div>
+				</form>
+			  </div>
+			`;
 
 			var wrap = document.getElementById('kontakt-form-wrap');
 			wrap.style.display = 'none';
 			document.getElementById('alja').style.display = 'none';
-			torzs.classList.remove('compact');
+			torzs.classList.add('compact');
+
 			var kozvetlen = document.getElementById('kozvetlen');
 			kozvetlen.style.cursor = 'pointer';
 			kozvetlen.addEventListener('click', function () {
@@ -712,17 +661,17 @@
 		  };
 		
 		function updateViewportSize() {
-				var w = window.innerWidth;
-				var h = window.innerHeight;
-				var el = document.getElementById('viewportSize');
-				if (el) {
-					el.textContent = "Ablakméret: " + w + " × " + h + " px";
-				}
+			var w = window.innerWidth;
+			var h = window.innerHeight;
+			var el = document.getElementById('viewportSize');
+			if (el) {
+				el.textContent = "Ablakméret: " + w + " × " + h + " px";
 			}
-			window.addEventListener('resize', updateViewportSize);
-			document.addEventListener('visibilitychange', function () {
-				if (!document.hidden) updateViewportSize();
-			});
+		}
+		window.addEventListener('resize', updateViewportSize);
+		document.addEventListener('visibilitychange', function () {
+			if (!document.hidden) updateViewportSize();
+		});
 			
 		  function initKontaktForm() {
 			var form = document.getElementById('kontaktForm');
@@ -817,7 +766,7 @@
 			</div>
 			<div id="tel_alja" class="contact-item">
 				📱 Telefon:
-				<br><a href="tel:+36301234567">06 30 1234565</a>
+				<br><a href="tel:+36301234567">06 30 1234567</a>
 			</div>
 		</div>
 	</div>
