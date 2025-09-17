@@ -409,10 +409,17 @@
 				font-size: 3rem;
 			}
 			
-			#torzs{
-				height: 60vh;
-			}
-			
+
+			#torzs.compact {
+				height: auto;
+				min-height: 40vh; /* ensure minimum space */
+			  }
+			  
+			  #torzs.compact .content-area {
+				position: static; /* remove absolute positioning */
+				height: auto;
+				margin-top: 70px; /* space for buttons */
+			  }
 			#bttn_celunk_torzs, #bttn_bovebben_torzs, #bttn_kapcsolat_torzs {
 				min-width: 40px;
 				font-size: 0.85rem;
@@ -577,6 +584,7 @@
 			setupElerhetosegLink();
 			setupBovebbenLink();
 			torzs.classList.remove('expanded');
+			torzs.classList.add('compact');
 			document.getElementById('alja').style.display = 'flex';
 		  };
 
@@ -654,6 +662,7 @@
 			  </div>
 			`;
 			torzs.classList.remove('expanded');
+			torzs.classList.remove('compact');
 			document.getElementById('alja').style.display = 'flex';
 			setupFAQ();
 		  };
@@ -680,7 +689,8 @@
 			var wrap = document.getElementById('kontakt-form-wrap');
 			wrap.style.display = 'none';
 			document.getElementById('alja').style.display = 'none';
-
+			torzs.classList.add('compact');
+			
 			var kozvetlen = document.getElementById('kozvetlen');
 			kozvetlen.style.cursor = 'pointer';
 			kozvetlen.addEventListener('click', function () {
@@ -799,7 +809,7 @@
 			</div>
 			<div id="tel_alja" class="contact-item">
 				📱 Telefon:
-				<br><a href="tel:+36301234567">06 30 1234568</a>
+				<br><a href="tel:+36301234567">06 30 1234567</a>
 			</div>
 		</div>
 	</div>
