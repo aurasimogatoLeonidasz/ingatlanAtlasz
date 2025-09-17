@@ -437,19 +437,25 @@
 				margin-left:30px;
 			}
 			
-			/* Keep button positioning consistent - remove compact layout changes */
+			/* Compact layout only for mobile screens under 480px */
 			#torzs.compact {
-				/* Remove layout changes that affect button positioning */
+				height: auto;
+				display: flex;
+				flex-direction: column;
+				padding-top: 20px;
 			}
 			  
-			/* Ensure buttons always stay in the same position */
 			#torzs.compact .button-container {
-				/* Keep original positioning */
+				position: static;
+				align-self: flex-start;
+				margin-bottom: 20px;
 			}
 			  
-			/* Keep content-area positioning consistent */
 			#torzs.compact .content-area {
-				/* Keep original positioning */
+				position: static;
+				height: auto;
+				flex: 1;
+				margin: 0 20px 20px 20px;
 			}
 			
 			.content-area.lil{
@@ -517,6 +523,10 @@
 			setupElerhetosegLink();
 		  }
 
+		  function applyMobileLayout() {
+			return window.innerWidth <= 480;
+		  }
+
 		  bttn_celunk_torzs.onclick = function () {
 			resetAllShadows();
 			bttn_celunk_torzs.style.boxShadow =
@@ -525,9 +535,13 @@
 			  "<br>Célunk egy olyan megbízható szoftverkomponens elérhetővé tétele, amely hatékony megoldás nyújt vállalkozásoknak, illetve magánszemélyeknek az ingatlanok nyilvántartásában.<br><br>Ha szeretne jobban megismerkedni a nyilvántartó rendszerben rejlő funkciókkal, kérem kattintson a <a href='#' class='bovebben_link'>Bővebben</a> menüpontra.<br><br>Amennyiben szüksége van az említett szoftverre/applikációra vagy meglévő ügyfelükként továbbfejlesztési igénye lenne kérem, keressen bizalommal a <a href='#' class='elerhetosegek_link'>Kapcsolat</a> menüpontban található elérhetőségek egyikén.";
 			setupElerhetosegLink();
 			setupBovebbenLink();
-			// Reset all layout classes to ensure consistent positioning
+			// Apply compact layout only on mobile screens
 			torzs.classList.remove('expanded', 'compact');
 			contentArea.classList.remove('lil');
+			if (applyMobileLayout()) {
+			  torzs.classList.add('compact');
+			  contentArea.classList.add('lil');
+			}
 			document.getElementById('alja').style.display = 'flex';
 		  };
 
@@ -653,9 +667,12 @@
 			var wrap = document.getElementById('kontakt-form-wrap');
 			wrap.style.display = 'none';
 			document.getElementById('alja').style.display = 'none';
-			// Reset all layout classes to ensure consistent positioning
+			// Apply compact layout only on mobile screens
 			torzs.classList.remove('expanded', 'compact');
 			contentArea.classList.remove('lil');
+			if (applyMobileLayout()) {
+			  torzs.classList.add('compact');
+			}
 			
 			var kozvetlen = document.getElementById('kozvetlen');
 			kozvetlen.style.cursor = 'pointer';
@@ -677,7 +694,27 @@
 				el.textContent = "Ablakméret: " + w + " × " + h + " px";
 			}
 		}
-		window.addEventListener('resize', updateViewportSize);
+		window.addEventListener('resize', function() {
+			updateViewportSize();
+			// Reapply layout based on new screen size
+			var activeButton = null;
+			if (bttn_celunk_torzs.style.boxShadow.includes('deepskyblue inset')) {
+				activeButton = 'celunk';
+			} else if (bttn_kapcsolat_torzs.style.boxShadow.includes('deepskyblue inset')) {
+				activeButton = 'kapcsolat';
+			}
+			
+			if (activeButton === 'celunk' || activeButton === 'kapcsolat') {
+				torzs.classList.remove('expanded', 'compact');
+				contentArea.classList.remove('lil');
+				if (applyMobileLayout()) {
+					torzs.classList.add('compact');
+					if (activeButton === 'celunk') {
+						contentArea.classList.add('lil');
+					}
+				}
+			}
+		});
 		document.addEventListener('visibilitychange', function () {
 			if (!document.hidden) updateViewportSize();
 		});
