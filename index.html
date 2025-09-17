@@ -409,7 +409,7 @@
 			}
 			
 			#bttn_celunk_torzs, #bttn_bovebben_torzs, #bttn_kapcsolat_torzs {
-				min-width: 80px;
+				min-width: 40px;
 				font-size: 0.85rem;
 				padding: 9.5px 17.5px;
 			}
@@ -641,7 +641,7 @@
 			  '0 0 30px deepskyblue inset, 0 0 30px deepskyblue inset, 0 0 10px deepskyblue inset, 0 0 10px deepskyblue inset, 0 0 10px deepskyblue inset';
 
 			contentText.innerHTML =
-			  "📧 <strong>E-mail:</strong><br><span class='sorBehuzas'>új ügyfelek részére:</span> <a href='mailto:ingatlanatlasz@gmail.com'>ingatlanatlasz@gmail.com</a><br><span class='sorBehuzas'>meglévő ügyfelek részére: <a href='mailto:ingatlanatlaszmeglevo@gmail.com'>ingatlanatlaszmeglevo@gmail.com</a></span><br><br>📱 <strong>Telefon:</strong> <a href='tel:+36301234567'>+36 30 123 4567</a><br><br>🔗 <span id='kozvetlen'><strong>Közvetlen üzenet küldéséhez kattintson ide</strong></span><br><br>" +
+			  "📧 <strong>E-mail:</strong><br><span class='sorBehuzas'>új ügyfelek részére:</span> <a href='mailto:ingatlanatlasz@gmail.com'>ingatlanatlasz@gmail.com</a><br><span class='sorBehuzas'>meglévő ügyfelek részére: <a href='mailto:ingatlanatlaszmeglevo@gmail.com'>ingatlanatlaszmeglevo@gmail.com</a></span><br><br>📱 <strong>Telefon:</strong> <a href='tel:+36301234567'>+36 30 123 4567</a><br><br> <span id='viewportSize' style='display:inline-block;margin-top:6px;'></span><br><br>🔗 <span id='kozvetlen'><strong>Közvetlen üzenet küldéséhez kattintson ide</strong></span><br><br>" +
 			  "<div id='kontakt-form-wrap' style='margin-top:12px; margin-left:32px;'>" +
 			  "<form id='kontaktForm' class='kapcsolat-form' style='display:grid;gap:10px;max-width:520px;'>" +
 			  "<input type='hidden' name='access_key' value='d0602500-3ece-48c6-86db-bef88bbcda5d'>" +
@@ -667,8 +667,22 @@
 			});
 
 			initKontaktForm();
+			updateViewportSize();
 		  };
-
+		
+		function updateViewportSize() {
+				var w = window.innerWidth;
+				var h = window.innerHeight;
+				var el = document.getElementById('viewportSize');
+				if (el) {
+					el.textContent = "Ablakméret: " + w + " × " + h + " px";
+				}
+			}
+			window.addEventListener('resize', updateViewportSize);
+			document.addEventListener('visibilitychange', function () {
+				if (!document.hidden) updateViewportSize();
+			});
+			
 		  function initKontaktForm() {
 			var form = document.getElementById('kontaktForm');
 			if (!form) return;
@@ -761,11 +775,10 @@
 				<br><a href="mailto:ingatlanatlasz@gmail.com">ingatlanatlasz@gmail.com</a>
 			</div>
 			<div id="tel_alja" class="contact-item">
-				📱 Telefon2:
+				📱 Telefon:
 				<br><a href="tel:+36301234567">06 30 1234567</a>
 			</div>
 		</div>
 	</div>
 </body>
 </html>
-
