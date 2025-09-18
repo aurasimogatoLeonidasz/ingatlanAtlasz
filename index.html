@@ -609,6 +609,7 @@
 			torzs.classList.remove('compactTorzs');
 			contentArea.classList.remove('lil');
 			document.getElementById('alja').style.display = 'flex';
+			setupMessengerDetection();
 			setupFAQ();
 		  };
 
@@ -674,9 +675,46 @@
 			});
 
 			initKontaktForm();
+			setupMessengerDetection();
 			updateViewportSize();
 		  };
 		
+		function setupMessengerDetection() {
+			var ua = navigator.userAgent || navigator.vendor || window.opera;
+			var isMessenger = ua.indexOf("FBAN") > -1 || ua.indexOf("FBAV") > -1;
+
+			if (isMessenger) {
+				document.querySelectorAll('.kapcsolatok').forEach(function(el) {
+					var href = el.getAttribute('href') || '';
+					
+					if (href.startsWith('tel:')) {
+						var number = href.replace('tel:', '');
+						el.removeAttribute('href');
+						el.style.cursor = "pointer";
+						el.onclick = function(e) {
+							e.preventDefault();
+							navigator.clipboard.writeText(number).then(function() {
+								alert("A telefonszám vágólapra másolva: " + number);
+							});
+						};
+						el.textContent = number + " (koppints a másoláshoz)";
+					} 
+					else if (href.startsWith('mailto:')) {
+						var email = href.replace('mailto:', '');
+						el.removeAttribute('href');
+						el.style.cursor = "pointer";
+						el.onclick = function(e) {
+							e.preventDefault();
+							navigator.clipboard.writeText(email).then(function() {
+								alert("Az email cím vágólapra másolva: " + email);
+							});
+						};
+						el.textContent = email + " (koppints a másoláshoz)";
+					}
+				});
+			}
+		}
+
 		function updateViewportSize() {
 			var w = window.innerWidth;
 			var h = window.innerHeight;
@@ -750,41 +788,6 @@
 		  bttn_bovebben_torzs.click();
 		});
 		
-		(function() {
-			var ua = navigator.userAgent || navigator.vendor || window.opera;
-			var isMessenger = ua.indexOf("FBAN") > -1 || ua.indexOf("FBAV") > -1;
-
-			if (isMessenger) {
-			  document.querySelectorAll('.kapcsolatok').forEach(function(el) {
-				var href = el.getAttribute('href') || '';
-				
-				if (href.startsWith('tel:')) {
-				  var number = href.replace('tel:', '');
-				  el.removeAttribute('href');
-				  el.style.cursor = "pointer";
-				  el.onclick = function(e) {
-					e.preventDefault();
-					navigator.clipboard.writeText(number).then(function() {
-					  alert("A telefonszám vágólapra másolva: " + number);
-					});
-				  };
-				  el.textContent = number + " (koppints a másoláshoz)";
-				} 
-				else if (href.startsWith('mailto:')) {
-				  var email = href.replace('mailto:', '');
-				  el.removeAttribute('href');
-				  el.style.cursor = "pointer";
-				  el.onclick = function(e) {
-					e.preventDefault();
-					navigator.clipboard.writeText(email).then(function() {
-					  alert("Az email cím vágólapra másolva: " + email);
-					});
-				  };
-				  el.textContent = email + " (koppints a másoláshoz)";
-				}
-			  });
-			}
-		  })();
 		
 
 	</script>
@@ -821,10 +824,9 @@
 			</div>
 			<div id="tel_alja" class="contact-item">
 				📱 Telefon:
-				<br><a class="kapcsolatok" href="tel:+36301234567">06 30 1234565</a>
+				<br><a class="kapcsolatok" href="tel:+36301234567">06 30 1234567</a>
 			</div>
 		</div>
 	</div>
 </body>
 </html>
-
