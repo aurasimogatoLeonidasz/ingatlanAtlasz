@@ -439,7 +439,12 @@
 			
 			
 			  
-			.compact {
+			.compactTorzs {
+				height: 45vh;
+
+			}
+			
+			.compactContentArea {
 				height: auto;
 
 			}
@@ -519,8 +524,8 @@
 			setupBovebbenLink();
 			torzs.classList.remove('expanded');
 			contentArea.classList.add('lil');
-			contentArea.classList.add('compact');
-			torzs.classList.add('compact');
+			contentArea.classList.add('compactContentArea');
+			torzs.classList.add('compactTorzs');
 			document.getElementById('alja').style.display = 'flex';
 		  };
 
@@ -598,8 +603,8 @@
 			  </div>
 			`;
 			torzs.classList.remove('expanded');
-			torzs.classList.remove('compact');
-			contentArea.classList.remove('compact');
+			contentArea.classList.remove('compactContentArea');
+			torzs.classList.remove('compactTorzs');
 			contentArea.classList.remove('lil');
 			document.getElementById('alja').style.display = 'flex';
 			setupFAQ();
@@ -648,8 +653,8 @@
 			wrap.style.display = 'none';
 			document.getElementById('alja').style.display = 'none';
 			contentArea.classList.remove('lil');
-			contentArea.classList.add('compact');
-			torzs.classList.add('compact');
+			contentArea.classList.add('compactContentArea');
+			torzs.classList.add('compactTorzs');
 			
 			var kozvetlen = document.getElementById('kozvetlen');
 			kozvetlen.style.cursor = 'pointer';
@@ -769,10 +774,9 @@
 			</div>
 			<div id="tel_alja" class="contact-item">
 				📱 Telefon:
-				<br><a href="tel:+36301234567">06 30 1234561</a>
+				<br><a href="tel:+36301234567">06 30 1234563</a>
 			</div>
 		</div>
 	</div>
 </body>
 </html>
-
