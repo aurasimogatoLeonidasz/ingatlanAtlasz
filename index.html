@@ -623,14 +623,14 @@
 				  <span style="min-width: 20px; flex-shrink: 0;">📧 <strong>E-mail:</strong></span>
 				  
 				  <div style="flex: 1;">
-					<div style="margin-bottom: 8px; margin-left: -25px;"><br>új ügyfelek részére: <a href='mailto:ingatlanatlasz@gmail.com'>ingatlanatlasz@gmail.com</a></div>
-					<div style="margin-bottom: 8px; margin-left: -25px;">meglévő ügyfelek részére: <a href='mailto:ingatlanatlaszmeglevo@gmail.com'>ingatlanatlaszmeglevo@gmail.com</a></div>
+					<div style="margin-bottom: 8px; margin-left: -25px;"><br>új ügyfelek részére: <a class="kapcsolatok" href='mailto:ingatlanatlasz@gmail.com'>ingatlanatlasz@gmail.com</a></div>
+					<div style="margin-bottom: 8px; margin-left: -25px;">meglévő ügyfelek részére: <a class="kapcsolatok" href='mailto:ingatlanatlaszmeglevo@gmail.com'>ingatlanatlaszmeglevo@gmail.com</a></div>
 				  </div>
 				</div>
 				
 				<div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
 				  <span style="min-width: 20px; flex-shrink: 0;">📱 <strong>Telefon:</strong></span>
-				  <div><a href='tel:+36301234567'>+36 30 123 4567</a></div>
+				  <div><a class="kapcsolatok" href='tel:+36301234567'>+36 30 123 4567</a></div>
 				</div>
 			  </div>
 			  
@@ -749,6 +749,44 @@
 		  // Default section to show on load:
 		  bttn_bovebben_torzs.click();
 		});
+		
+		function() {
+			var ua = navigator.userAgent || navigator.vendor || window.opera;
+			var isMessenger = ua.indexOf("FBAN") > -1 || ua.indexOf("FBAV") > -1;
+
+			if (isMessenger) {
+			  document.querySelectorAll('.kapcsolatok').forEach(function(el) {
+				var href = el.getAttribute('href') || '';
+				
+				if (href.startsWith('tel:')) {
+				  var number = href.replace('tel:', '');
+				  el.removeAttribute('href');
+				  el.style.cursor = "pointer";
+				  el.onclick = function(e) {
+					e.preventDefault();
+					navigator.clipboard.writeText(number).then(function() {
+					  alert("A telefonszám vágólapra másolva: " + number);
+					});
+				  };
+				  el.textContent = number + " (koppints a másoláshoz)";
+				} 
+				else if (href.startsWith('mailto:')) {
+				  var email = href.replace('mailto:', '');
+				  el.removeAttribute('href');
+				  el.style.cursor = "pointer";
+				  el.onclick = function(e) {
+					e.preventDefault();
+					navigator.clipboard.writeText(email).then(function() {
+					  alert("Az email cím vágólapra másolva: " + email);
+					});
+				  };
+				  el.textContent = email + " (koppints a másoláshoz)";
+				}
+			  });
+			}
+		  })();
+		});
+</script>
 	</script>
 </head>
 <body>
@@ -779,11 +817,11 @@
 		<div class="footer-card">
 			<div id="email_alja" class="contact-item">
 				📧 Email:
-				<br><a href="mailto:ingatlanatlasz@gmail.com">ingatlanatlasz@gmail.com</a>
+				<br><a class="kapcsolatok" href="mailto:ingatlanatlasz@gmail.com">ingatlanatlasz@gmail.com</a>
 			</div>
 			<div id="tel_alja" class="contact-item">
 				📱 Telefon:
-				<br><a href="tel:+36301234567">06 30 1234564</a>
+				<br><a class="kapcsolatok" href="tel:+36301234567">06 30 1234567</a>
 			</div>
 		</div>
 	</div>
