@@ -661,7 +661,14 @@
 			kozvetlen.addEventListener('click', function () {
 			  var isHidden = wrap.style.display === 'none' || wrap.style.display === '';
 			  wrap.style.display = isHidden ? 'block' : 'none';
-			  torzs.classList.toggle('expanded', isHidden);
+			  
+			  if (isHidden) {
+				torzs.classList.remove('compactTorzs');  // Remove compact class
+				torzs.classList.add('expanded');         // Add expanded class
+			  } else {
+				torzs.classList.add('compactTorzs');     // Add compact class back
+				torzs.classList.remove('expanded');     // Remove expanded class
+			  }
 			});
 
 			initKontaktForm();
@@ -774,7 +781,7 @@
 			</div>
 			<div id="tel_alja" class="contact-item">
 				📱 Telefon:
-				<br><a href="tel:+36301234567">06 30 1234565</a>
+				<br><a href="tel:+36301234567">06 30 1234567</a>
 			</div>
 		</div>
 	</div>
