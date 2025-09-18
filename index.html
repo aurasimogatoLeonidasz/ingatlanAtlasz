@@ -750,7 +750,7 @@
 		  bttn_bovebben_torzs.click();
 		});
 		
-		function() {
+		(function() {
 			var ua = navigator.userAgent || navigator.vendor || window.opera;
 			var isMessenger = ua.indexOf("FBAN") > -1 || ua.indexOf("FBAV") > -1;
 
@@ -786,7 +786,7 @@
 			}
 		  })();
 		});
-</script>
+
 	</script>
 </head>
 <body>
@@ -821,10 +821,9 @@
 			</div>
 			<div id="tel_alja" class="contact-item">
 				📱 Telefon:
-				<br><a class="kapcsolatok" href="tel:+36301234567">06 30 1234565</a>
+				<br><a class="kapcsolatok" href="tel:+36301234567">06 30 1234567</a>
 			</div>
 		</div>
 	</div>
 </body>
 </html>
-
