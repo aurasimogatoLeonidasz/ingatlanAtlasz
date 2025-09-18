@@ -437,7 +437,6 @@
 				margin-left:30px;
 			}
 			
-			/* Compact layout only for mobile screens under 480px */
 			#torzs.compact {
 				height: auto;
 				display: flex;
@@ -446,16 +445,12 @@
 			}
 			  
 			#torzs.compact .button-container {
-				position: static;
-				align-self: flex-start;
-				margin-bottom: 20px;
+
 			}
 			  
-			#torzs.compact .content-area {
-				position: static;
+			.content-area {
 				height: auto;
-				flex: 1;
-				margin: 0 20px 20px 20px;
+
 			}
 			
 			.content-area.lil{
@@ -523,10 +518,6 @@
 			setupElerhetosegLink();
 		  }
 
-		  function applyMobileLayout() {
-			return window.innerWidth <= 480;
-		  }
-
 		  bttn_celunk_torzs.onclick = function () {
 			resetAllShadows();
 			bttn_celunk_torzs.style.boxShadow =
@@ -535,13 +526,9 @@
 			  "<br>Célunk egy olyan megbízható szoftverkomponens elérhetővé tétele, amely hatékony megoldás nyújt vállalkozásoknak, illetve magánszemélyeknek az ingatlanok nyilvántartásában.<br><br>Ha szeretne jobban megismerkedni a nyilvántartó rendszerben rejlő funkciókkal, kérem kattintson a <a href='#' class='bovebben_link'>Bővebben</a> menüpontra.<br><br>Amennyiben szüksége van az említett szoftverre/applikációra vagy meglévő ügyfelükként továbbfejlesztési igénye lenne kérem, keressen bizalommal a <a href='#' class='elerhetosegek_link'>Kapcsolat</a> menüpontban található elérhetőségek egyikén.";
 			setupElerhetosegLink();
 			setupBovebbenLink();
-			// Apply compact layout only on mobile screens
-			torzs.classList.remove('expanded', 'compact');
-			contentArea.classList.remove('lil');
-			if (applyMobileLayout()) {
-			  torzs.classList.add('compact');
-			  contentArea.classList.add('lil');
-			}
+			torzs.classList.remove('expanded');
+			contentArea.classList.add('lil');
+			torzs.classList.add('compact');
 			document.getElementById('alja').style.display = 'flex';
 		  };
 
@@ -667,12 +654,8 @@
 			var wrap = document.getElementById('kontakt-form-wrap');
 			wrap.style.display = 'none';
 			document.getElementById('alja').style.display = 'none';
-			// Apply compact layout only on mobile screens
-			torzs.classList.remove('expanded', 'compact');
 			contentArea.classList.remove('lil');
-			if (applyMobileLayout()) {
-			  torzs.classList.add('compact');
-			}
+			torzs.classList.add('compact');
 			
 			var kozvetlen = document.getElementById('kozvetlen');
 			kozvetlen.style.cursor = 'pointer';
@@ -694,27 +677,7 @@
 				el.textContent = "Ablakméret: " + w + " × " + h + " px";
 			}
 		}
-		window.addEventListener('resize', function() {
-			updateViewportSize();
-			// Reapply layout based on new screen size
-			var activeButton = null;
-			if (bttn_celunk_torzs.style.boxShadow.includes('deepskyblue inset')) {
-				activeButton = 'celunk';
-			} else if (bttn_kapcsolat_torzs.style.boxShadow.includes('deepskyblue inset')) {
-				activeButton = 'kapcsolat';
-			}
-			
-			if (activeButton === 'celunk' || activeButton === 'kapcsolat') {
-				torzs.classList.remove('expanded', 'compact');
-				contentArea.classList.remove('lil');
-				if (applyMobileLayout()) {
-					torzs.classList.add('compact');
-					if (activeButton === 'celunk') {
-						contentArea.classList.add('lil');
-					}
-				}
-			}
-		});
+		window.addEventListener('resize', updateViewportSize);
 		document.addEventListener('visibilitychange', function () {
 			if (!document.hidden) updateViewportSize();
 		});
@@ -812,10 +775,9 @@
 			</div>
 			<div id="tel_alja" class="contact-item">
 				📱 Telefon:
-				<br><a href="tel:+36301234567">06 30 1234568</a>
+				<br><a href="tel:+36301234567">06 30 123456</a>
 			</div>
 		</div>
 	</div>
 </body>
 </html>
-
