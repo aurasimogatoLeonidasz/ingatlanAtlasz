@@ -388,27 +388,35 @@
 		
 		@media (max-width: 480px) {
 			#teto {
+				height: 15vh;
 				font-size: 3rem;
+				font-family: Algerian;
 			}
 			
 			#torzs{
 				height: 60vh;
+				justify-content:center;
 			}
 			
 			#bttn_celunk_torzs, #bttn_bovebben_torzs, #bttn_kapcsolat_torzs {
 				min-width: 40px;
-				font-size: 0.85rem;
+				font-size: 0.80rem;
 				padding: 9.5px 17.5px;
 			}
 			.button-container {
-				left: 50%;
-				transform: translateX(-50%);
+				width:100%;
+				justify-content:center;
+				left: 5px;  
 				gap: 5px;  
 			}
 			  
 			.content-area {
 				top: 70px;
+				left: 10px;
+				right: 10px;
 				bottom: 1px;
+				justify-content: left;
+				
 			}
 			
 			.content-text {
@@ -434,19 +442,25 @@
 				font-size: 0.8rem;
 			}
 			
-			.compact {
-				height: 45vh;
-				
+			kontakt-form-wrap{
+				margin-left:30px;
 			}
+			
+			
 			  
-			.content-area.lil{
-				text-align:center;
+			#torzs.compactTorzs {
+				height: 55vh ;
+
 			}
 			
-			.aljaCelunk{
-				margin-bottom:20px;
+			.compactContentArea {
+				height: auto;
+
 			}
 			
+			.lil{
+				text-align:justify;
+			}
 			
 			#alja {
 				height: auto;
@@ -519,8 +533,8 @@
 			setupBovebbenLink();
 			torzs.classList.remove('expanded');
 			contentArea.classList.add('lil');
-			torzs.classList.add('compact');
-			contentArea.classList.add('compact');
+			contentArea.classList.add('compactContentArea');
+			torzs.classList.add('compactTorzs');
 			document.getElementById('alja').style.display = 'flex';
 		  };
 
@@ -530,11 +544,9 @@
 			  '0 0 30px deepskyblue inset, 0 0 30px deepskyblue inset, 0 0 10px deepskyblue inset, 0 0 10px deepskyblue inset, 0 0 10px deepskyblue inset';
 			contentText.innerHTML = `
 			  <div class="faq-container">
-				<p id="kerdesKattFelirat" style="margin-bottom: 20px; font-weight: 600;">A válaszok a kérdésekre kattintva válnak láthatóvá.</p>
+				<p id="kerdesKattFelirat" style="margin-bottom: 20px; font-weight: 600;">A kérdésekre kattintva megtudhatja, hogy milyen módon kínál megoldást a nyilvántartó rendszer az adott problémára.</p>
 				<p id="modoFunkcFelirat" style="margin-bottom: 25px; color: #e0e0e0;">Az felsorolt funkciók mindegyike igény szerint módosítható, illetve eltávolítható!</p>
-				
-				
-				
+
 				<div class="faq-item">
 					<div class="faq-question">Szeretne átfogó képet kapni a kiadásairól és bevételeiről?</div>
 					<div class="faq-answer">
@@ -600,10 +612,11 @@
 			  </div>
 			`;
 			torzs.classList.remove('expanded');
-			torzs.classList.remove('compact');
-			contentArea.classList.remove('compact');
+			contentArea.classList.remove('compactContentArea');
+			torzs.classList.remove('compactTorzs');
 			contentArea.classList.remove('lil');
 			document.getElementById('alja').style.display = 'flex';
+			setupMessengerDetection();
 			setupFAQ();
 		  };
 
@@ -618,21 +631,21 @@
 				  <span style="min-width: 20px; flex-shrink: 0;">📧 <strong>E-mail:</strong></span>
 				  
 				  <div style="flex: 1;">
-					<div style="margin-bottom: 8px; margin-left: -25px;"><br>új ügyfelek részére: <a href='mailto:ingatlanatlasz@gmail.com'>ingatlanatlasz@gmail.com</a></div>
-					<div style="margin-bottom: 8px; margin-left: -25px;">meglévő ügyfelek részére: <a href='mailto:ingatlanatlaszmeglevo@gmail.com'>ingatlanatlaszmeglevo@gmail.com</a></div>
+					<div style="margin-bottom: 8px; margin-left: -25px;"><br>új ügyfelek részére: <a class="kapcsolatok" href='mailto:ingatlanatlasz@gmail.com'>ingatlanatlasz@gmail.com</a></div>
+					<div style="margin-bottom: 8px; margin-left: -25px;">meglévő ügyfelek részére: <a class="kapcsolatok" href='mailto:ingatlanatlaszmeglevo@gmail.com'>ingatlanatlaszmeglevo@gmail.com</a></div>
 				  </div>
 				</div>
 				
 				<div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
 				  <span style="min-width: 20px; flex-shrink: 0;">📱 <strong>Telefon:</strong></span>
-				  <div><a href='tel:+36301234567'>+36 30 123 4567</a></div>
+				  <div><a class="kapcsolatok" href='tel:+36301234567'>+36 30 123 4567</a></div>
 				</div>
 			  </div>
 			  
 			  
-			  🔗 <span id='kozvetlen'><strong>Azonnali üzenet küldéséhez kattintson ide</strong></span><br><br>
+			  🔗 <span id='kozvetlen'><strong>Közvetlen üzenet küldéséhez kattintson ide</strong></span><br><br>
 			  
-			  <div id='kontakt-form-wrap' style='margin-top:12px; margin-left:32px;'>
+			  <div id='kontakt-form-wrap' style='margin-top:12px; margin-left:50px;'>
 				<form id='kontaktForm' class='kapcsolat-form' style='display:grid;gap:10px;max-width:520px;'>
 				  <input type='hidden' name='access_key' value='d0602500-3ece-48c6-86db-bef88bbcda5d'>
 				  <input type='hidden' name='subject' value='Kapcsolat üzenet az oldalról'>
@@ -650,21 +663,65 @@
 			wrap.style.display = 'none';
 			document.getElementById('alja').style.display = 'none';
 			contentArea.classList.remove('lil');
-			torzs.classList.add('compact');
-			contentArea.classList.remove('compact');
+			contentArea.classList.add('compactContentArea');
+			torzs.classList.add('compactTorzs');
 			
 			var kozvetlen = document.getElementById('kozvetlen');
 			kozvetlen.style.cursor = 'pointer';
 			kozvetlen.addEventListener('click', function () {
 			  var isHidden = wrap.style.display === 'none' || wrap.style.display === '';
 			  wrap.style.display = isHidden ? 'block' : 'none';
-			  torzs.classList.toggle('expanded', isHidden);
+			  
+			  if (isHidden) {
+				torzs.classList.remove('compactTorzs');  // Remove compact class
+				torzs.classList.add('expanded');         // Add expanded class
+			  } else {
+				torzs.classList.add('compactTorzs');     // Add compact class back
+				torzs.classList.remove('expanded');     // Remove expanded class
+			  }
 			});
 
 			initKontaktForm();
+			setupMessengerDetection();
 			updateViewportSize();
 		  };
 		
+		function setupMessengerDetection() {
+			var ua = navigator.userAgent || navigator.vendor || window.opera;
+			var isMessenger = ua.indexOf("FBAN") > -1 || ua.indexOf("FBAV") > -1;
+
+			if (isMessenger) {
+				document.querySelectorAll('.kapcsolatok').forEach(function(el) {
+					var href = el.getAttribute('href') || '';
+					
+					if (href.startsWith('tel:')) {
+						var number = href.replace('tel:', '');
+						el.removeAttribute('href');
+						el.style.cursor = "pointer";
+						el.onclick = function(e) {
+							e.preventDefault();
+							navigator.clipboard.writeText(number).then(function() {
+								alert("A telefonszám vágólapra másolva: " + number);
+							});
+						};
+						el.textContent = number;
+					} 
+					else if (href.startsWith('mailto:')) {
+						var email = href.replace('mailto:', '');
+						el.removeAttribute('href');
+						el.style.cursor = "pointer";
+						el.onclick = function(e) {
+							e.preventDefault();
+							navigator.clipboard.writeText(email).then(function() {
+								alert("Az email cím vágólapra másolva: " + email);
+							});
+						};
+						el.textContent = email ;
+					}
+				});
+			}
+		}
+
 		function updateViewportSize() {
 			var w = window.innerWidth;
 			var h = window.innerHeight;
@@ -737,6 +794,9 @@
 		  // Default section to show on load:
 		  bttn_bovebben_torzs.click();
 		});
+		
+		
+
 	</script>
 </head>
 <body>
@@ -767,16 +827,13 @@
 		<div class="footer-card">
 			<div id="email_alja" class="contact-item">
 				📧 Email:
-				<br><a href="mailto:ingatlanatlasz@gmail.com">ingatlanatlasz@gmail.com</a>
+				<br><a class="kapcsolatok" href="mailto:ingatlanatlasz@gmail.com">ingatlanatlasz@gmail.com</a>
 			</div>
 			<div id="tel_alja" class="contact-item">
 				📱 Telefon:
-				<br><a href="tel:+36301234567">06 30 1234568</a>
+				<br><a class="kapcsolatok" href="tel:+36301234567">06 30 1234591</a>
 			</div>
 		</div>
 	</div>
 </body>
 </html>
-
-
-
