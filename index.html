@@ -436,7 +436,7 @@
 			
 			#torzs.compact {
 				height: auto !important;
-				min-height: 40vh;
+				min-height: 30vh;
 			}
 			  
 			#torzs.compact .button-container {
@@ -530,7 +530,7 @@
 			setupBovebbenLink();
 			torzs.classList.remove('expanded');
 			contentArea.classList.add('lil');
-			//torzs.classList.add('compact');
+			torzs.classList.add('compact');
 			document.getElementById('alja').style.display = 'flex';
 		  };
 
@@ -542,7 +542,21 @@
 			  <div class="faq-container">
 				<p id="kerdesKattFelirat" style="margin-bottom: 20px; font-weight: 600;">A válaszok a kérdésekre kattintva válnak láthatóvá.</p>
 				<p id="modoFunkcFelirat" style="margin-bottom: 25px; color: #e0e0e0;">Az felsorolt funkciók mindegyike igény szerint módosítható, illetve eltávolítható!</p>
-
+				
+				<div class="faq-item">
+					<div class="faq-question">Kiknek ajánljuk az Ingatlan Atlasz nyilvántartó rendszert?</div>
+					<div class="faq-answer">
+						<p>Minden ingatlannal rendelkező személy számára.	</p>
+					</div>
+				</div>
+				
+				<div class="faq-item">
+					<div class="faq-question">Mi lesz eddigi adataimmal</div>
+					<div class="faq-answer">
+						<p>	</p>
+					</div>
+				</div>
+				
 				<div class="faq-item">
 					<div class="faq-question">Szeretne átfogó képet kapni a kiadásairól és bevételeiről?</div>
 					<div class="faq-answer">
@@ -657,7 +671,7 @@
 			wrap.style.display = 'none';
 			document.getElementById('alja').style.display = 'none';
 			contentArea.classList.remove('lil');
-			//torzs.classList.add('compact');
+			torzs.classList.remove('compact');
 			
 			var kozvetlen = document.getElementById('kozvetlen');
 			kozvetlen.style.cursor = 'pointer';
