@@ -435,8 +435,8 @@
 			}
 			
 			.compact {
-				height: 50vh;
-				min-height: 40vh;
+				height: 40vh;
+				
 			}
 			  
 			.content-area.lil{
@@ -515,6 +515,7 @@
 			torzs.classList.remove('expanded');
 			contentArea.classList.add('lil');
 			torzs.classList.add('compact');
+			content-area.classList.add('compact');
 			document.getElementById('alja').style.display = 'flex';
 		  };
 
@@ -595,6 +596,7 @@
 			`;
 			torzs.classList.remove('expanded');
 			torzs.classList.remove('compact');
+			content-area.classList.remove('compact');
 			contentArea.classList.remove('lil');
 			document.getElementById('alja').style.display = 'flex';
 			setupFAQ();
@@ -644,6 +646,7 @@
 			document.getElementById('alja').style.display = 'none';
 			contentArea.classList.remove('lil');
 			torzs.classList.add('compact');
+			content-area.classList.remove('compact');
 			
 			var kozvetlen = document.getElementById('kozvetlen');
 			kozvetlen.style.cursor = 'pointer';
