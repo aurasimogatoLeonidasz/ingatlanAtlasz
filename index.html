@@ -434,27 +434,11 @@
 				font-size: 0.8rem;
 			}
 			
-			#torzs.compact {
-				height: auto !important;
-				min-height: 30vh;
+			.compact {
+				height: 50vh;
+				min-height: 40vh;
 			}
 			  
-			#torzs.compact .button-container {
-				position: absolute;
-				top: 20px;
-				left: 50%;
-				transform: translateX(-50%);
-			}
-			  
-			#torzs.compact .content-area {
-				position: static;
-				height: auto;
-				margin-top: 80px;
-				margin-left: 20px;
-				margin-right: 20px;
-				margin-bottom: 20px;
-			}
-			
 			.content-area.lil{
 				text-align:center;
 			}
@@ -543,19 +527,7 @@
 				<p id="kerdesKattFelirat" style="margin-bottom: 20px; font-weight: 600;">A válaszok a kérdésekre kattintva válnak láthatóvá.</p>
 				<p id="modoFunkcFelirat" style="margin-bottom: 25px; color: #e0e0e0;">Az felsorolt funkciók mindegyike igény szerint módosítható, illetve eltávolítható!</p>
 				
-				<div class="faq-item">
-					<div class="faq-question">Kiknek ajánljuk az Ingatlan Atlasz nyilvántartó rendszert?</div>
-					<div class="faq-answer">
-						<p>Minden ingatlannal rendelkező személy számára.	</p>
-					</div>
-				</div>
 				
-				<div class="faq-item">
-					<div class="faq-question">Mi lesz eddigi adataimmal</div>
-					<div class="faq-answer">
-						<p>	</p>
-					</div>
-				</div>
 				
 				<div class="faq-item">
 					<div class="faq-question">Szeretne átfogó képet kapni a kiadásairól és bevételeiről?</div>
@@ -671,7 +643,7 @@
 			wrap.style.display = 'none';
 			document.getElementById('alja').style.display = 'none';
 			contentArea.classList.remove('lil');
-			torzs.classList.remove('compact');
+			torzs.classList.add('compact');
 			
 			var kozvetlen = document.getElementById('kozvetlen');
 			kozvetlen.style.cursor = 'pointer';
@@ -791,12 +763,11 @@
 			</div>
 			<div id="tel_alja" class="contact-item">
 				📱 Telefon:
-				<br><a href="tel:+36301234567">06 30 1234568</a>
+				<br><a href="tel:+36301234567">06 30 1234567</a>
 			</div>
 		</div>
 	</div>
 </body>
 </html>
-
 
 
