@@ -3,14 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Ingatlan Atlasz</title>
+	<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+	<title>Ingatlan Corvina</title>
 	<style>
 		* {
 			margin: 0;
 			padding: 0;
 			box-sizing: border-box;
 		}
-
+		
 		html, body {
 			height: 100vh;
 			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -54,20 +55,33 @@
 		#teto {
 			height: 20vh;
 			display: flex;
+			flex-direction:column;
 			align-items: center;
 			justify-content: center;
-			font-family: Algerian;
+			font-family: 'Algerian';
 			font-size: 5rem;
 			text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 			transition: all 0.3s ease;
 			
 			backdrop-filter: blur(2px);
 		}
-
+		
+		#teto .subheading{
+			
+			font-size: 1.25rem;
+			font-weight: 500;
+			letter-spacing: 0.02em;
+			margin-top: 0.25rem;
+			text-shadow: 0.06em 0.06em 0.12em rgba(0,0,0,0.4);
+			opacity: 0.95;
+		}
+		
 		#teto:hover {
 			transform: scale(1.02);
 			text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 		}
+		
+		
 		
 		#torzs {
 			height: 60vh;
@@ -288,6 +302,10 @@
 				font-size: 4rem;
 			}
 			
+			#teto .subheading{
+				font-size: 1.15rem;
+			}
+			
 			.button-container {
 				flex-direction: row;
 				gap: 10px;
@@ -337,6 +355,10 @@
 		@media (max-width: 800px) {
 			#teto {
 				font-size: 3rem;
+			}
+			
+			#teto .subheading{
+				font-size: 1.05rem;
 			}
 			
 			.button-container {
@@ -390,7 +412,11 @@
 			#teto {
 				height: 15vh;
 				font-size: 3rem;
-				font-family: Algerian;
+				
+			}
+			
+			#teto .subheading{
+				font-size: 1.05rem;
 			}
 			
 			#torzs{
@@ -564,14 +590,14 @@
 				<div class="faq-item">
 					<div class="faq-question">Kiutat keres az adatok káoszából?</div>
 					<div class="faq-answer">
-						<p>Az Ingatlan Atlasz strukkturáltsága révén biztos megoldást nyújt a nyilvántartott adatok egyszerű és hatékony átlátására. A rendszer felépítése lehetővé teszi, hogy az adatok szeparáltan jelenjenek meg, így egyszerre mindig csak egymással szorosan összefüggő információk legyenek láthatóak.</p>
+						<p>Az Ingatlan Corvina strukkturáltsága révén biztos megoldást nyújt a nyilvántartott adatok egyszerű és hatékony átlátására. A rendszer felépítése lehetővé teszi, hogy az adatok szeparáltan jelenjenek meg, így egyszerre mindig csak egymással szorosan összefüggő információk legyenek láthatóak.</p>
 					</div>
 				</div>
 
 				<div class="faq-item">
 					<div class="faq-question">Mi lesz az eddigim adataimmal?</div>
 					<div class="faq-answer">
-						<p>Bármilyen logika mentén tárolt adatok átvezethetőek az Ingatlan Atlasz rendszerbe.</p>
+						<p>Bármilyen logika mentén tárolt adatok átvezethetőek az Ingatlan Corvina rendszerbe.</p>
 					</div>
 				</div>
 				
@@ -613,12 +639,12 @@
 				<div class="faq-item">
 					<div class="faq-question">Változtatható a betűk mérete/színe?</div>
 					<div class="faq-answer">
-						<p>Az Ingatlan Atlaszban lehetőséget biztosít hogy minden felhasználó a saját igényei szerint használja az alkalmazást. Az alapértelmezett betűmerettől 2 egységgel lehet növelni illetve csökkenteni a betűk méretét. Színek tekintetében pedig kék, zöld és letisztult (fekete-fehér) stílusok közül lehet választani.</p>
+						<p>Az Ingatlan Corvinában lehetőséget biztosít hogy minden felhasználó a saját igényei szerint használja az alkalmazást. Az alapértelmezett betűmerettől 2 egységgel lehet növelni illetve csökkenteni a betűk méretét. Színek tekintetében pedig kék, zöld és letisztult (fekete-fehér) stílusok közül lehet választani.</p>
 					</div>
 				</div>
 				
 				<div class="faq-item">
-					<div class="faq-question">Miért nem rendelkezem az Ingatlan Atlasz nyilvántartó rendszerrel?</div>
+					<div class="faq-question">Miért nem rendelkezem az Ingatlan Corvina nyilvántartó rendszerrel?</div>
 					<div class="faq-answer">
 						<p>Ennek az egyedüli oka az lehet, hogy még nem keresett fel bennünket a <a href="#" class="elerhetosegek_link">Kapcsolat</a> menüpontban található elérhetőségek egyikén!</p>
 					</div>
@@ -645,7 +671,7 @@
 				  <span style="min-width: 20px; flex-shrink: 0;">📧 <strong>E-mail:</strong></span>
 				  
 				  <div style="flex: 1;">
-					<div style="margin-bottom: 8px; margin-left: -25px;"><br>új ügyfelek részére: <a class="kapcsolatok" href='mailto:ingatlanatlasz@gmail.com'>ingatlanatlasz@gmail.com</a></div>
+					<div style="margin-bottom: 8px; margin-left: -25px;"><br>új ügyfelek részére: <a class="kapcsolatok" href='mailto:ingatlancorvina@gmail.com'>ingatlancorvina@gmail.com</a></div>
 					<div style="margin-bottom: 8px; margin-left: -25px;">meglévő ügyfelek részére: <a class="kapcsolatok" href='mailto:ingatlanatlaszmeglevo@gmail.com'>ingatlanatlaszmeglevo@gmail.com</a></div>
 				  </div>
 				</div>
@@ -815,7 +841,8 @@
 </head>
 <body>
 	<div id="teto">
-		<p id="cim">Ingatlan Atlasz</p>
+		<p id="cim">Ingatlan Corvina</p>
+		<p class="subheading">ingatlan kezelőknek specializálva</p>
 	</div>
 	
 	<div id="torzs">
@@ -841,7 +868,7 @@
 		<div class="footer-card">
 			<div id="email_alja" class="contact-item">
 				📧 Email:
-				<br><a class="kapcsolatok" href="mailto:ingatlanatlasz@gmail.com">ingatlanatlasz@gmail.com</a>
+				<br><a class="kapcsolatok" href="mailto:ingatlancorvina@gmail.com">ingatlancorvina@gmail.com</a>
 			</div>
 			<div id="tel_alja" class="contact-item">
 				📱 Telefon:
