@@ -514,6 +514,8 @@
 		  var contentArea = document.querySelector('.content-area');
 		  var contentText = document.getElementById('content-text');
 		  var torzs = document.getElementById('torzs');
+			
+		  enableMessengerCopy();
 		
 		  function setupElerhetosegLink() {
 			var link = document.querySelector('.elerhetosegek_link');
@@ -669,12 +671,12 @@
 			torzs.classList.remove('compactTorzs');
 			contentArea.classList.remove('lil');
 			document.getElementById('alja').style.display = 'flex';
-			setupMessengerDetection();
 			setupFAQ();
 		  };
 
 		  bttn_kapcsolat_torzs.onclick = function () {
 			window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+			enableMessengerCopy();
 			resetAllShadows();
 			bttn_kapcsolat_torzs.style.boxShadow =
 			  '0 0 30px deepskyblue inset, 0 0 30px deepskyblue inset, 0 0 10px deepskyblue inset, 0 0 10px deepskyblue inset, 0 0 10px deepskyblue inset';
@@ -736,44 +738,34 @@
 			});
 
 			initKontaktForm();
-			setupMessengerDetection();
 			updateViewportSize();
 		  };
 		
-		function setupMessengerDetection() {
-			var ua = navigator.userAgent || navigator.vendor || window.opera;
-			var isMessenger = ua.indexOf("FBAN") > -1 || ua.indexOf("FBAV") > -1;
+		function enableMessengerCopy() {
+		  var ua = navigator.userAgent || '';
+		  var isMessenger = ua.includes('FBAN') || ua.includes('FBAV');
+		  if (!isMessenger) return;
 
-			if (isMessenger) {
-				document.querySelectorAll('.kapcsolatok').forEach(function(el) {
-					var href = el.getAttribute('href') || '';
-					
-					if (href.startsWith('tel:')) {
-						var number = href.replace('tel:', '');
-						el.removeAttribute('href');
-						el.style.cursor = "pointer";
-						el.onclick = function(e) {
-							e.preventDefault();
-							navigator.clipboard.writeText(number).then(function() {
-								alert("A telefonszám vágólapra másolva: " + number);
-							});
-						};
-						el.textContent = number;
-					} 
-					else if (href.startsWith('mailto:')) {
-						var email = href.replace('mailto:', '');
-						el.removeAttribute('href');
-						el.style.cursor = "pointer";
-						el.onclick = function(e) {
-							e.preventDefault();
-							navigator.clipboard.writeText(email).then(function() {
-								alert("Az email cím vágólapra másolva: " + email);
-							});
-						};
-						el.textContent = email ;
-					}
+		  document.querySelectorAll('.kapcsolatok').forEach(function (a) {
+			var href = a.getAttribute('href') || '';
+			if (!href.startsWith('tel:') && !href.startsWith('mailto:')) return;
+
+			var text = href.replace(/^tel:|^mailto:/, '');
+			a.removeAttribute('href');
+			a.style.cursor = 'pointer';
+			a.onclick = function (e) {
+			  e.preventDefault();
+			  (navigator.clipboard?.writeText(text) || Promise.reject())
+				.then(() => alert('Vágólapra másolva: ' + text))
+				.catch(function () {
+				  var ta = document.createElement('textarea');
+				  ta.value = text; ta.style.position = 'fixed'; ta.style.left = '-9999px';
+				  document.body.appendChild(ta); ta.select();
+				  try { document.execCommand('copy'); } finally { document.body.removeChild(ta); }
+				  alert('Vágólapra másolva: ' + text);
 				});
-			}
+			};
+		  });
 		}
 
 		function updateViewportSize() {
@@ -886,7 +878,7 @@
 			</div>
 			<div id="tel_alja" class="contact-item">
 				📱 Telefon:
-				<br><a class="kapcsolatok" href="tel:+36307271232">06 30 727 1232</a>
+				<br><a class="kapcsolatok" href="tel:+36307271232">106 30 727 1232</a>
 			</div>
 		</div>
 	</div>
