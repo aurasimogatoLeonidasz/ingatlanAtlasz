@@ -676,7 +676,6 @@
 
 		  bttn_kapcsolat_torzs.onclick = function () {
 			window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-			enableMessengerCopy();
 			resetAllShadows();
 			bttn_kapcsolat_torzs.style.boxShadow =
 			  '0 0 30px deepskyblue inset, 0 0 30px deepskyblue inset, 0 0 10px deepskyblue inset, 0 0 10px deepskyblue inset, 0 0 10px deepskyblue inset';
@@ -714,7 +713,7 @@
 				</form>
 			  </div>
 			`;
-
+			enableMessengerCopy();
 			var wrap = document.getElementById('kontakt-form-wrap');
 			wrap.style.display = 'none';
 			document.getElementById('alja').style.display = 'none';
@@ -878,7 +877,7 @@
 			</div>
 			<div id="tel_alja" class="contact-item">
 				📱 Telefon:
-				<br><a class="kapcsolatok" href="tel:+36307271232">106 30 727 1232</a>
+				<br><a class="kapcsolatok" href="tel:+36307271232">06 30 727 1232</a>
 			</div>
 		</div>
 	</div>
