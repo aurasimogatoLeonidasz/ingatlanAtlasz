@@ -756,13 +756,13 @@
 			  e.preventDefault();
 			  e.stopPropagation();
 			  (navigator.clipboard?.writeText(text) || Promise.reject())
-				.then(function(){ showToast('Vágólapra másolva: ' + text); })
+				.then(function(){ showToast('vágólapra másolva'); })
 				.catch(function () {
 				  var ta = document.createElement('textarea');
 				  ta.value = text; ta.style.position = 'fixed'; ta.style.left = '-9999px';
 				  document.body.appendChild(ta); ta.select();
 				  try { document.execCommand('copy'); } finally { document.body.removeChild(ta); }
-				  showToast('Vágólapra másolva: ' + text);
+				  showToast('vágólapra másolva');
 				});
 			};
 		  });
@@ -889,7 +889,7 @@
 			</div>
 			<div id="tel_alja" class="contact-item">
 				📱 Telefon:
-				<br><a class="kapcsolatok" href="tel:+36307271232">106 30 727 1232</a>
+				<br><a class="kapcsolatok" href="tel:+36307271232">06 30 727 1232</a>
 			</div>
 		</div>
 	</div>
