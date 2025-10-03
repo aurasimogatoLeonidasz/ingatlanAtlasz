@@ -501,9 +501,9 @@
 		}
 	</style>
 	<script>
-		window.onload = function() {
-			window.scrollTo(0, 0);
-		  };
+		window.addEventListener('load', function () {
+		  window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+		});
   
 		document.addEventListener('DOMContentLoaded', function () {
 		  var bttn_celunk_torzs = document.getElementById('bttn_celunk_torzs');
@@ -559,6 +559,7 @@
 		  }
 
 		  bttn_celunk_torzs.onclick = function () {
+			window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
 			resetAllShadows();
 			bttn_celunk_torzs.style.boxShadow =
 			  '0 0 30px deepskyblue inset, 0 0 30px deepskyblue inset, 0 0 10px deepskyblue inset, 0 0 10px deepskyblue inset, 0 0 10px deepskyblue inset';
@@ -574,6 +575,7 @@
 		  };
 
 		  bttn_bovebben_torzs.onclick = function () {
+			window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
 			resetAllShadows();
 			bttn_bovebben_torzs.style.boxShadow =
 			  '0 0 30px deepskyblue inset, 0 0 30px deepskyblue inset, 0 0 10px deepskyblue inset, 0 0 10px deepskyblue inset, 0 0 10px deepskyblue inset';
@@ -670,6 +672,7 @@
 		  };
 
 		  bttn_kapcsolat_torzs.onclick = function () {
+			window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
 			resetAllShadows();
 			bttn_kapcsolat_torzs.style.boxShadow =
 			  '0 0 30px deepskyblue inset, 0 0 30px deepskyblue inset, 0 0 10px deepskyblue inset, 0 0 10px deepskyblue inset, 0 0 10px deepskyblue inset';
